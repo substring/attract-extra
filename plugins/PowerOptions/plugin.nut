@@ -39,11 +39,18 @@ class PowerOptions
 				break
 
 			case "FreeBSD":
+				commands =
+				{
+					reboot   = { cmd = "shutdown", param = "--reboot now"},
+					poweroff = { cmd = "shutdown", param = "--poweroff now"},
+					suspend  = { cmd = "systemctl", param = "suspend"},
+				}
+				break
 			case "Linux":
 				commands =
 				{
-					reboot   = { cmd = "systemctl", param = "reboot"},
-					poweroff = { cmd = "systemctl", param = "poweroff"},
+					reboot   = { cmd = "reboot", param = ""},
+					poweroff = { cmd = "poweroff", param = ""},
 					suspend  = { cmd = "systemctl", param = "suspend"},
 				}
 				break
